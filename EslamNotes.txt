@@ -1,0 +1,48 @@
+- why you don't use aiofiles for sync insted of filez --- or work with filz as legacy code % okay apply the true lib 
+
+- the same thing with aiobotocore must use it insted of boto for non blocking mechansiem  % the same answer 
+
+- why in cvprocess you make await oon the work with database why didn't use create task like s3 beaucse here we don't  need the rsult from the database 
+
+- 
+
+
+--------------------------------
+for me:
+
+
+will use async.createtask with start point of the program beacuse this is like detach to  start all tasks 
+
+and using async and await 
+
+
+
+******
+How to  apply:
+
+1- make any method or function async function  
+2- make any object inside this function take time to do somthings await beacuse this is awaitable object 
+3- using the own async function to help us 
+4- Apply lock for the cretical objects and apply safe thread 
+
+-------------
+notes for applaing - from tutorial : 
+
+apply await for task when we need the function result before we leave this area --- but here may goes
+to another task but the current task will never contained before we done the result of the await line
+
+so wait will make the current function or coroutine pused 
+
+
+apply asyncio.create_task(...) when we don't care about the function result for the next line of the code 
+but here will cont. in the same task to the next line 
+-------------
+note from ahmed 
+
+1- search for shield to protect the code with await from cancelation 
+2- aiboto3 
+
+
+
+
+session1 for mahrossa finince: ..M=11sb
